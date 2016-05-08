@@ -152,6 +152,8 @@
     <Compile Include="AzureTest.cs" />
     <Compile Include="Dsl\Parser.cs" />
     <Compile Include="Model\Definition.cs" />
+    <Compile Include="Model\ResourceGroup.cs" />
+    <Compile Include="Model\StorageAccount.cs" />
     <Compile Include="Model\Subscription.cs" />
     <Compile Include="Model\VM.cs" />
     <Compile Include="Program.cs" />
@@ -160,7 +162,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="TS.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

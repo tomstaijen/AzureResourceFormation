@@ -10,7 +10,7 @@ namespace Azure.Model
     {
         public void Define()
         {
-            var nic = new Nic
+            var nic = new NetworkInterface
             {
                 Name = "mynic",
             };

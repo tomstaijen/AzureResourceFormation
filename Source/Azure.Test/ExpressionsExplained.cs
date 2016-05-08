@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using NUnit.Framework;
 
 namespace Azure.Test
 {
-    [TestFixture]
-    public class Class1
+    class ExpressionsExplained
     {
-        [Test]
-        public void Test()
+        public void TestExpression1()
         {
-            var sut = new AzureTest();
-            sut.test();
+            string s = null;
         }
     }
 }

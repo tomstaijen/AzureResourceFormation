@@ -27,13 +27,25 @@ namespace Azure.Model
         public Location Location { get; set; }
     }
 
-    class Nic : Resource
+    class ResourceReference
+    {
+        public string Identifier { get; set; }
+    }
+
+    class NetworkInterface : Resource
     {
         /// <summary>
         /// Name is unique per resourcegroup
         /// </summary>
         [ResourceGroupIdentifier]
         public string Name { get; set; }
+
+        public Subnet Subnet { get; set; }
+
+        class SubnetReference
+        {
+            public string Identifier { get; set; }
+        }
     }
 
     class VNet : Resource
@@ -63,18 +75,9 @@ namespace Azure.Model
         /// </summary>
         public string Size { get; set; }
 
-        public Nic[] Network { get; set; }
+        public NetworkInterface[] Network { get; set; }
 
         public OSProfile OsProfile { get; private set; }
-    }
-
-    /// <summary>
-    /// ResourceGroup
-    /// </summary>
-    class Rg : Resource
-    {
-        [SubscriptionIdentifier]
-        public string Name { get; set; }
     }
 
     public class RequiredAttribute : Attribute
@@ -99,27 +102,9 @@ namespace Azure.Model
         
     }
 
-    /// <summary>
-    ///  Storage Account
-    /// </summary>
-    public class Sa
-    {
-        [GlobalIdentifier]
-        public String Name { get; set; }
-        public StorageSku Sku { get; set; }
-
-        public enum StorageSku
-        {
-            Standard,
-            Premium
-        }
-
-       
-    }
-
     public class Disk
     {
-        public Sa Account { get; set; }
+        public StorageAccount Account { get; set; }
     }
 }
 
