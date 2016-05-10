@@ -9,11 +9,12 @@ namespace Azure.Dsl
 {
     public class Parser
     {
-        public static readonly Parser<Identifier> Identifier = Parse
-            .Char(c => char.IsLetter(c) || char.IsDigit(c) || c == '_' || c == '-', "identifier")
-            .AtLeastOnce()
-            .Text()
-            .Select(s => new Identifier(s));
+
+        public static readonly Parser<Identifier> Identifier =
+            from head in Parse.Letter.Once().Text()
+            from rest in
+                Parse.Char(c => char.IsLetter(c) || char.IsDigit(c) || c == '_' || c == '-', "identifier").Many().Text()
+            select new Identifier(head + rest);
     }
 
     public class AzureDefinition
