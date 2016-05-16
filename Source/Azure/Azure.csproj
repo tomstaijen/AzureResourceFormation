@@ -151,15 +151,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dsl\FormationScope.cs" />
+    <Compile Include="Model\State\Resource.cs" />
+    <Compile Include="Model\State\ResourceGroup.cs" />
+    <Compile Include="Model\State\VirtualMachine.cs" />
     <Compile Include="Synchronization\AzureAuthenticator.cs" />
     <Compile Include="Synchronization\AzureBuilder.cs" />
     <Compile Include="Synchronization\AzureFactory.cs" />
-    <Compile Include="Synchronization\AzureRefresher.cs" />
-    <Compile Include="Synchronization\AzureTest.cs" />
+    <Compile Include="Synchronization\AzurePrincipal.cs" />
     <Compile Include="Dsl\Parser.cs" />
+    <Compile Include="Synchronization\Handlers\AzureResourceGroupHandler.cs" />
+    <Compile Include="Synchronization\Handlers\AzureVirtualMachineHandler.cs" />
     <Compile Include="Synchronization\ICredentialsProvider.cs" />
     <Compile Include="Model\Definition.cs" />
-    <Compile Include="Model\ResourceDefinitionGroup.cs" />
+    <Compile Include="Model\ResourceDescriptionGroup.cs" />
     <Compile Include="Model\StorageAccount.cs" />
     <Compile Include="Model\Subscription.cs" />
     <Compile Include="Model\Syntax\Disk.cs" />
@@ -168,16 +172,17 @@
     <Compile Include="Model\Syntax\Module.cs" />
     <Compile Include="Model\Syntax\NetworkInterface.cs" />
     <Compile Include="Model\Attributes\RequiredAttribute.cs" />
-    <Compile Include="Model\Syntax\ResourceDefinition.cs" />
+    <Compile Include="Model\Syntax\ResourceDescription.cs" />
     <Compile Include="Model\Attributes\ResourceGroupIdentifier.cs" />
     <Compile Include="Model\ResourceSelector.cs" />
     <Compile Include="Model\Syntax\ResourceGroep.cs" />
     <Compile Include="Model\Syntax\Subnet.cs" />
     <Compile Include="Model\Attributes\SubscriptionIdentifier.cs" />
     <Compile Include="Model\Syntax\Vm.cs" />
-    <Compile Include="Model\Syntax\VNetDefinition.cs" />
+    <Compile Include="Model\Syntax\VNetDescription.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Synchronization\SecretCredentialsProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -185,7 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\Generic\" />
-    <Folder Include="Model\State\" />
     <Folder Include="Scripting\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

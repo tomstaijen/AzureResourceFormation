@@ -4,9 +4,9 @@ using Azure.Model.Syntax;
 namespace Azure.Model
 {
     /// <summary>
-    /// ResourceDefinitionGroup
+    /// ResourceDescriptionGroup
     /// </summary>
-    public class ResourceDefinitionGroup : ResourceDefinition
+    public class ResourceDescriptionGroup : ResourceDescription
     {
         [SubscriptionIdentifier]
         public string Name { get; set; }

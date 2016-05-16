@@ -13,13 +13,13 @@ namespace Azure.Test
     {
         public void Sample()
         {
-            ResourceDefinition.DefaultLocation = "westeurope";
+            ResourceDescription.DefaultLocation = "westeurope";
             FormationBuilder.New(fs =>
             {
                 var rg = fs.ResourceGroup("env");
             });
 
-            var vnet = new VNetDefinition
+            var vnet = new VNetDescription
             {
                 Name = "vnet",
                 AddressRange = "192.168.0.0/16",

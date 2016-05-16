@@ -1,25 +1,26 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Azure.Model.State;
 using Azure.Model.Syntax;
 using Microsoft.Azure.Management.Compute;
 using Microsoft.Azure.Management.Compute.Models;
 
 namespace Azure
 {
-    class AzureVmHandler : IResourceHandler<Vm>
+    class AzureVirtualMachineHandler : IResourceHandler<VirtualMachineState>
     {
         private readonly ICredentialsProvider _credentialsProvider;
 
-        public AzureVmHandler(ICredentialsProvider credentialsProvider)
+        public AzureVirtualMachineHandler(ICredentialsProvider credentialsProvider)
         {
             _credentialsProvider = credentialsProvider;
         }
 
-        public IEnumerable<Vm> GetState()
+        public IEnumerable<VirtualMachineState> GetState()
         {
             return GetClient().VirtualMachines.ListAll(new ListParameters()).VirtualMachines.Select(v => 
-                new Vm
+                new VirtualMachineState
                 {
                     Id = v.Id,
                     Name = v.Name,
@@ -28,7 +29,7 @@ namespace Azure
                 });
         }
 
-        public void Apply(IEnumerable<Vm> desiredState)
+        public void Apply(IEnumerable<VirtualMachineState> desiredState)
         {
             throw new NotImplementedException();
         }

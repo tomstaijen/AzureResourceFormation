@@ -3,9 +3,9 @@
     /// <summary>
     /// Resources are referencable. Provisionstate will be taken care of, required id will be computed.
     /// </summary>
-    public class ResourceDefinition {
+    public class ResourceDescription {
 
-        public ResourceDefinition()
+        public ResourceDescription()
         {
             Location = DefaultLocation;
         }

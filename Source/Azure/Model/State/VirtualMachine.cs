@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Azure.Model.Syntax
+namespace Azure.Model.State
 {
-    class ResourceGroep : ResourceDescription
+    class VirtualMachineState : Resource
     {
-        public string Name { get; set; }
+        public string Size { get; set; }
     }
 }

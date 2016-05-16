@@ -1,6 +1,6 @@
 ﻿namespace Azure.Model.Syntax
 {
-    public class VNetDefinition : ResourceDefinition
+    public class VNetDescription : ResourceDescription
     {
         public string Name { get; set; }
         public string AddressRange { get; set; }

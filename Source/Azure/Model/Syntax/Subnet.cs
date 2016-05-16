@@ -1,6 +1,6 @@
 ﻿namespace Azure.Model.Syntax
 {
-    public class Subnet : ResourceDefinition
+    public class Subnet : ResourceDescription
     {
         public string Name { get; set; }
         public string AddressRange { get; set; }

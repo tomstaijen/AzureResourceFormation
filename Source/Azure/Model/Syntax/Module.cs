@@ -27,7 +27,7 @@ namespace Azure.Model.Syntax
     /// <summary>
     /// Virtual context to support lookup of inner resources
     /// </summary>
-    public class ModuleInstance : ResourceDefinition
+    public class ModuleInstance : ResourceDescription
     {
         public string Name { get; set; }
     }

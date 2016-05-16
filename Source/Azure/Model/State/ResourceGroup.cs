@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Azure.Model.Syntax
+namespace Azure.Model.State
 {
-    class ResourceGroep : ResourceDescription
+    public class ResourceGroup : Resource
     {
-        public string Name { get; set; }
     }
 }

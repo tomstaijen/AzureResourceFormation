@@ -5,11 +5,11 @@ namespace Azure.Model
     public class ResourceSelector
     {
         private readonly string _name;
-        private readonly ResourceDefinition _resourceDefinition;
+        private readonly ResourceDescription _resourceDescription;
 
-        protected ResourceSelector(ResourceDefinition resourceDefinition)
+        protected ResourceSelector(ResourceDescription resourceDescription)
         {
-            _resourceDefinition = resourceDefinition;
+            _resourceDescription = resourceDescription;
         }
 
         protected ResourceSelector(string name)
@@ -17,9 +17,9 @@ namespace Azure.Model
             _name = name;
         }
 
-        public static implicit operator ResourceSelector(ResourceDefinition resourceDefinition)  // explicit byte to digit conversion operator
+        public static implicit operator ResourceSelector(ResourceDescription resourceDescription)  // explicit byte to digit conversion operator
         {
-            return new ResourceSelector(resourceDefinition);
+            return new ResourceSelector(resourceDescription);
         }
 
         public static implicit operator ResourceSelector(string name)  // explicit byte to digit conversion operator

@@ -20,12 +20,12 @@ namespace Azure.Dsl
     {
         public FormationScope()
         {
-            Catalog = new Dictionary<string, ResourceDefinition>();
+            Catalog = new Dictionary<string, ResourceDescription>();
         }
 
-        public IDictionary<string,ResourceDefinition> Catalog { get; set; }
+        public IDictionary<string,ResourceDescription> Catalog { get; set; }
 
-        public ResourceDefinition Add(string name, ResourceDefinition rd)
+        public ResourceDescription Add(string name, ResourceDescription rd)
         {
             Catalog.Add(name, rd);
             return rd;
@@ -34,7 +34,7 @@ namespace Azure.Dsl
 
     public static class ResourceGroepExtensions
     {
-        public static ResourceDefinition ResourceGroup(this FormationScope scope, string name)
+        public static ResourceDescription ResourceGroup(this FormationScope scope, string name)
         {
             return scope.Add(name, new ResourceGroep()
             {

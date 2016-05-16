@@ -10,7 +10,7 @@ namespace Azure.Model.Syntax
     /// <summary>
     /// Virtual Machine
     /// </summary>
-    public class Vm : ResourceDefinition
+    public class Vm : ResourceDescription
     {
         public string Id { get; set; }
 

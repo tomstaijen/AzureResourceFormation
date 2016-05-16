@@ -24,7 +24,7 @@ namespace Azure
                 };
                 var scp = new SecretCredentialsProvider();
                 scp.SetPrincipal(principal);
-                var factory = new AzureVmHandler(scp);
+                var factory = new AzureVirtualMachineHandler(scp);
                 var state = factory.GetState();
                 foreach (var s in state)
                 {

@@ -2,7 +2,7 @@
 
 namespace Azure.Model.Syntax
 {
-    public class NetworkInterface : ResourceDefinition
+    public class NetworkInterface : ResourceDescription
     {
         /// <summary>
         /// Name is unique per resourcegroup
