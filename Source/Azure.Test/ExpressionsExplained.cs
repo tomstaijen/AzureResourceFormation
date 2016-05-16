@@ -11,7 +11,6 @@ namespace Azure.Test
     {
         public void TestExpression1()
         {
-            string s = null;
         }
     }
 }

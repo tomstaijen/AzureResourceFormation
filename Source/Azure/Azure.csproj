@@ -63,6 +63,10 @@
       <HintPath>..\packages\Microsoft.Azure.Management.Network.4.4.0-preview\lib\net45\Microsoft.Azure.Management.Network.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Azure.Management.ResourceManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Management.ResourceManager.1.1.1-preview\lib\net45\Microsoft.Azure.Management.ResourceManager.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Azure.Management.Storage, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Azure.Management.Storage.3.0.0\lib\net40\Microsoft.Azure.Management.Storage.dll</HintPath>
       <Private>True</Private>
@@ -146,22 +150,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AzureBuilder.cs" />
-    <Compile Include="AzureFactory.cs" />
-    <Compile Include="AzureRefresher.cs" />
-    <Compile Include="AzureTest.cs" />
+    <Compile Include="Dsl\FormationScope.cs" />
+    <Compile Include="Synchronization\AzureAuthenticator.cs" />
+    <Compile Include="Synchronization\AzureBuilder.cs" />
+    <Compile Include="Synchronization\AzureFactory.cs" />
+    <Compile Include="Synchronization\AzureRefresher.cs" />
+    <Compile Include="Synchronization\AzureTest.cs" />
     <Compile Include="Dsl\Parser.cs" />
+    <Compile Include="Synchronization\ICredentialsProvider.cs" />
     <Compile Include="Model\Definition.cs" />
-    <Compile Include="Model\ResourceGroup.cs" />
+    <Compile Include="Model\ResourceDefinitionGroup.cs" />
     <Compile Include="Model\StorageAccount.cs" />
     <Compile Include="Model\Subscription.cs" />
-    <Compile Include="Model\VM.cs" />
+    <Compile Include="Model\Syntax\Disk.cs" />
+    <Compile Include="Model\Attributes\GlobalIdentifier.cs" />
+    <Compile Include="Model\Syntax\Location.cs" />
+    <Compile Include="Model\Syntax\Module.cs" />
+    <Compile Include="Model\Syntax\NetworkInterface.cs" />
+    <Compile Include="Model\Attributes\RequiredAttribute.cs" />
+    <Compile Include="Model\Syntax\ResourceDefinition.cs" />
+    <Compile Include="Model\Attributes\ResourceGroupIdentifier.cs" />
+    <Compile Include="Model\ResourceSelector.cs" />
+    <Compile Include="Model\Syntax\ResourceGroep.cs" />
+    <Compile Include="Model\Syntax\Subnet.cs" />
+    <Compile Include="Model\Attributes\SubscriptionIdentifier.cs" />
+    <Compile Include="Model\Syntax\Vm.cs" />
+    <Compile Include="Model\Syntax\VNetDefinition.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Generic\" />
+    <Folder Include="Model\State\" />
+    <Folder Include="Scripting\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

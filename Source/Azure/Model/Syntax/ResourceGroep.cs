@@ -3,17 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Azure.Model;
 
-namespace Azure
+namespace Azure.Model.Syntax
 {
-    class AzureRefresher
+    class ResourceGroep : ResourceDefinition
     {
-        
-    }
-
-    public class AzureState
-    {
-        
+        public string Name { get; set; }
     }
 }

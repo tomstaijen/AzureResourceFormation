@@ -1,4 +1,6 @@
 ﻿using System;
+using Azure.Model.Attributes;
+using Azure.Model.Syntax;
 
 namespace Azure.Model
 {
